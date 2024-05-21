@@ -32,9 +32,23 @@ User Space
 - applications in user space make system call to manipulate data in mem/disk <-> students make requests to librian for access to books
 
 ## Working w/ Hardware
-<here>
+udev as device manager of linux OS. sits in Users Space.
+When USB Disk inserted -> Device Driver detected (Kernel Space) and send uevents to udev (Users Space) which then associate the disk w/ a device node /dev/sdb1.
+
+udevadm
+- management tool for udev
+
+dmesg
+display messages from kernel's ring-buffer
+
+lspci, lsblk, lscpu, lsmem, lshw
+- 32/64 bit -> register size, capacity to load data from mem and compute
+- socket -> physical slot for cpu
+- vCPUs -> Sockets x Cores per socket x Threads
 
 ## Linux Boot Sequence
+<here>
+
 ## Systemd Targets (Run Levels)
 ## Filesystems and Hierarchy
 mnt
