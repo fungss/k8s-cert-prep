@@ -47,13 +47,37 @@ lspci, lsblk, lscpu, lsmem, lshw
 - vCPUs -> Sockets x Cores per socket x Threads
 
 ## Linux Boot Sequence
-<here>
+- BIOS POST -> check if hardware connected
+- Boot Loader -> loads kernel
+- Kernel Initialization
+- INIT Process (systemd)
 
-## Systemd Targets (Run Levels)
+## Systemd Targets (for systemd == Run Levels in sysV)
+To reveal Systemd Target
+```
+who -r
+```
+
 ## Filesystems and Hierarchy
-mnt
-var
-usr
-dev
-bin
-root
+file types
+- regular file
+- directory
+- specifal files
+char files, block files (harddisks and RAMs), links (hard links, soft links == pointer), sockets files, named pipes
+
+```
+file or ls -ld path/to/file
+```
+
+Filesystem Hierarchy
+- home, home dir
+- opt, third party program
+- mnt, mount filesystems temporary
+- tmp, for temporary data
+- media, for external media like usb. ```df -hP``` for all mounted filesystems
+- dev, for devices
+- bin, basic programs and binary
+- etc, for config
+- lib, for shared library to be imported
+- usr, user-specific programs
+- var, for logs
